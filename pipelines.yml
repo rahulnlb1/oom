@@ -1,0 +1,25 @@
+resources:
+  - name: scriptGit
+    type: GitRepo
+    configuration:
+      path: rahulnlb1/oom
+      gitProvider: s_gitHub
+      branches:
+        include: ^{{gitBranch}}$
+
+pipelines:
+ - name: oom_pipeline
+   steps:
+       - name: S_Bash_0577
+         type: Bash
+         configuration:
+           inputResources:
+              - name: scriptGit
+         execution:
+           onExecute:
+             - echo $res_scriptGit_resourcePath
+             - pushd $res_scriptGit_resourcePath
+             - ls -la
+             - dd if=/dev/zero of=output.dat  bs=1000M  count=1
+             - node oom.js
+             - popd
