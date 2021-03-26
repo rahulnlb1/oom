@@ -19,7 +19,7 @@ pipelines:
            onExecute:
              - echo $res_scriptGit_resourcePath
              - Push-Location $res_scriptGit_resourcePath
-             - ls -la
              - fsutil file createnew output.dat 1073741824 #1GB
+             - Get-ChildItem
              - node oom.js
              - Pop-Location
