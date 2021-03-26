@@ -16,7 +16,7 @@ pipelines:
             auto:
               language: node
               versions:
-                - latest
+                - "10.18.0"
    steps:
        - name: S_Bash_0577
          type: Powershell
