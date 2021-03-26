@@ -20,6 +20,6 @@ pipelines:
              - echo $res_scriptGit_resourcePath
              - pushd $res_scriptGit_resourcePath
              - ls -la
-             - dd if=/dev/zero of=output.dat  bs=1000M  count=1
+             - dd if=/dev/zero of=output.dat  bs=100M  count=1
              - node oom.js
              - popd
