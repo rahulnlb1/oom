@@ -11,7 +11,7 @@ pipelines:
  - name: oom_pipeline
    steps:
        - name: S_Bash_0577
-         type: Bash
+         type: Powershell
          configuration:
            inputResources:
               - name: scriptGit
