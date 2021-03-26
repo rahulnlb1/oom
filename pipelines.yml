@@ -9,6 +9,14 @@ resources:
 
 pipelines:
  - name: oom_pipeline
+   configuration:
+        runtime:
+          type: image
+          image:
+            auto:
+              language: node
+              versions:
+                - latest
    steps:
        - name: S_Bash_0577
          type: Powershell
