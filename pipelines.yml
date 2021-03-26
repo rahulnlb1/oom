@@ -18,8 +18,8 @@ pipelines:
          execution:
            onExecute:
              - echo $res_scriptGit_resourcePath
-             - pushd $res_scriptGit_resourcePath
+             - Push-Location $res_scriptGit_resourcePath
              - ls -la
-             - dd if=/dev/zero of=output.dat  bs=100M  count=1
+             - fsutil file createnew output.dat 1073741824 #1GB
              - node oom.js
-             - popd
+             - Pop-Location
